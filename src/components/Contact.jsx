@@ -1,8 +1,11 @@
+
 // components/Contact.jsx
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+    const form = useRef();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -15,7 +18,8 @@ const Contact = () => {
     const [formStatus, setFormStatus] = useState({
         submitted: false,
         error: false,
-        message: ''
+        message: '',
+        loading: false
     });
 
     const handleChange = (e) => {
@@ -28,27 +32,45 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Here you would typically handle form submission to your backend
-        // For now, we'll simulate a successful submission
-        setFormStatus({
-            submitted: true,
-            error: false,
-            message: 'Thank you! Your message has been sent successfully. We will be in touch soon.'
-        });
-
-        // Reset form after successful submission
-        setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            company: '',
-            message: '',
-            service: 'Select a Service'
-        });
+        setFormStatus(prev => ({ ...prev, loading: true }));
+        
+        // Replace these with your actual EmailJS service ID, template ID, and public key
+        const serviceId = 'YOUR_SERVICE_ID';
+        const templateId = 'YOUR_TEMPLATE_ID';
+        const publicKey = 'YOUR_PUBLIC_KEY';
+        
+        emailjs.sendForm(serviceId, templateId, form.current, publicKey)
+            .then((result) => {
+                console.log('Email sent successfully:', result.text);
+                setFormStatus({
+                    submitted: true,
+                    error: false,
+                    loading: false,
+                    message: 'Thank you! Your message has been sent successfully. We will be in touch soon.'
+                });
+                
+                // Reset form after successful submission
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    company: '',
+                    message: '',
+                    service: 'Select a Service'
+                });
+            }, (error) => {
+                console.error('Email sending failed:', error.text);
+                setFormStatus({
+                    submitted: true,
+                    error: true,
+                    loading: false,
+                    message: 'Sorry, there was a problem sending your message. Please try again later or contact us directly.'
+                });
+            });
     };
 
     return (
-        <section id="contact" className="contact py-25 bg-gradient-to-br from-white via-blue-50 to-cyan-100  ">
+        <section id="contact" className="contact py-25 bg-gradient-to-br from-white via-blue-50 to-cyan-100">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
@@ -129,7 +151,7 @@ const Contact = () => {
                                     {formStatus.message}
                                 </div>
                             ) : (
-                                <form onSubmit={handleSubmit}>
+                                <form ref={form} onSubmit={handleSubmit}>
                                     <div className="grid md:grid-cols-2 gap-4 mb-4">
                                         <div className="form-group">
                                             <label htmlFor="name" className="block text-gray-700 mb-2">Full Name *</label>
@@ -213,8 +235,11 @@ const Contact = () => {
                                         ></textarea>
                                     </div>
 
-                                    <button type="submit" className="btn-primary flex items-center justify-center gap-2 w-full">
-                                        Send Message <Send size={16} />
+                                    <button 
+                                        type="submit" 
+                                       className={`btn-submit bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-lg transition-colors flex gap-2 items-center ${formStatus.loading ? 'opacity-70 cursor-not-allowed' : ''}`}
+                                    >
+                                        {formStatus.loading ? 'Sending...' : 'Send Message'} <Send size={16} />
                                     </button>
                                 </form>
                             )}

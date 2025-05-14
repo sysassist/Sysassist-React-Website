@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+
+
+import React, { useState, useRef } from 'react';
 import { ChevronDown, CheckCircle, Search, Briefcase, Code, Database, Server, Users, Send } from 'lucide-react';
+import emailjs from '@emailjs/browser'; // Import EmailJS
 
 const CareersPage = () => {
     const [activeTab, setActiveTab] = useState('all');
@@ -17,19 +20,14 @@ const CareersPage = () => {
     });
     const [showApplicationForm, setShowApplicationForm] = useState(false);
     const [formSubmitted, setFormSubmitted] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitError, setSubmitError] = useState(null);
+    
+    const formRef = useRef(); // Create a ref for the form
 
     const locations = [
         'Indore',
     ];
-
-    // const jobCategories = [
-    //     { id: 'all', name: 'All Positions' },
-    //     { id: 'development', name: 'Software Development', icon: <Code size={20} /> },
-    //     { id: 'data', name: 'Data & Analytics', icon: <Database size={20} /> },
-    //     { id: 'cloud', name: 'Cloud Infrastructure', icon: <Server size={20} /> },
-    //     { id: 'pm', name: 'Project Management', icon: <Briefcase size={20} /> },
-    //     { id: 'consulting', name: 'IT Consulting', icon: <Users size={20} /> }
-    // ];
 
     const jobListings = [
         {
@@ -97,22 +95,55 @@ const CareersPage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Here you would typically handle form submission to your backend
-        setFormSubmitted(true);
-        // Reset form
-        setApplicationForm({
-            name: '',
-            email: '',
-            phone: '',
+        setIsSubmitting(true);
+        setSubmitError(null);
+        
+        // Prepare template parameters for EmailJS
+        const templateParams = {
+            from_name: applicationForm.name,
+            from_email: applicationForm.email,
+            phone_number: applicationForm.phone,
             position: applicationForm.position,
-            experience: '',
-            message: '',
-            resume: null
+            experience: applicationForm.experience,
+            message: applicationForm.message,
+            // Note: File attachments require special handling
+            // EmailJS has a separate attachment feature in paid plans
+        };
+        
+        // Replace these with your EmailJS credentials
+        // You can find these in your EmailJS dashboard
+        emailjs.send(
+            'YOUR_SERVICE_ID', // Get from EmailJS dashboard
+            'YOUR_TEMPLATE_ID', // Get from EmailJS dashboard
+            templateParams,
+            'YOUR_PUBLIC_KEY' // Get from EmailJS dashboard
+        )
+        .then((response) => {
+            console.log('SUCCESS!', response.status, response.text);
+            setFormSubmitted(true);
+            setIsSubmitting(false);
+            
+            // Reset form
+            setApplicationForm({
+                name: '',
+                email: '',
+                phone: '',
+                position: applicationForm.position,
+                experience: '',
+                message: '',
+                resume: null
+            });
+            
+            // Show success message for 3 seconds
+            setTimeout(() => {
+                setFormSubmitted(false);
+            }, 3000);
+        })
+        .catch((error) => {
+            console.error('FAILED...', error);
+            setSubmitError('Failed to submit your application. Please try again later.');
+            setIsSubmitting(false);
         });
-        // Show success message for 3 seconds
-        setTimeout(() => {
-            setFormSubmitted(false);
-        }, 3000);
     };
 
     // Filter jobs based on active tab, search term, and location
@@ -221,19 +252,6 @@ const CareersPage = () => {
                                 </select>
                             </div>
 
-                            {/* <div className="category-tabs flex overflow-x-auto pb-2 md:pb-0 md:justify-end">
-                                {jobCategories.map((category) => (
-                                    <button
-                                        key={category.id}
-                                        className={`category-tab flex items-center px-3 py-2 mr-2 rounded-lg ${activeTab === category.id ? 'bg-blue-600 text-white' : 'bg-white text-gray-700'
-                                            }`}
-                                        onClick={() => setActiveTab(category.id)}
-                                    >
-                                        {category.icon && <span className="mr-2">{category.icon}</span>}
-                                        <span className="whitespace-nowrap">{category.name}</span>
-                                    </button>
-                                ))}
-                            </div> */}
                         </div>
                     </div>
 
@@ -342,7 +360,13 @@ const CareersPage = () => {
                                 </p>
                             </div>
                         ) : (
-                            <form onSubmit={handleSubmit} className="application-form bg-gray-50 rounded-xl p-8">
+                            <form ref={formRef} onSubmit={handleSubmit} className="application-form bg-gray-50 rounded-xl p-8">
+                                {submitError && (
+                                    <div className="error-message bg-red-50 text-red-500 p-4 rounded-lg mb-6">
+                                        {submitError}
+                                    </div>
+                                )}
+                            
                                 <div className="grid md:grid-cols-2 gap-6">
                                     <div className="form-group">
                                         <label htmlFor="name" className="block text-gray-700 font-medium mb-2">Full Name</label>
@@ -449,10 +473,23 @@ const CareersPage = () => {
                                 <div className="form-actions mt-8">
                                     <button
                                         type="submit"
-                                        className="btn-submit bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-lg transition-colors flex items-center"
+                                        disabled={isSubmitting}
+                                        className={`btn-submit bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-lg transition-colors flex items-center ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                                     >
-                                        <Send size={20} className="mr-2" />
-                                        Submit Application
+                                        {isSubmitting ? (
+                                            <>
+                                                <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                                </svg>
+                                                Submitting...
+                                            </>
+                                        ) : (
+                                            <>
+                                                <Send size={20} className="mr-2" />
+                                                Submit Application
+                                            </>
+                                        )}
                                     </button>
                                 </div>
                             </form>
