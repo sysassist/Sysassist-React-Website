@@ -43,7 +43,7 @@ function App() {
                 <Services />
                 <Process />
                 <Clients />
-                <Testimonials />
+                {/* <Testimonials /> */}
               </>
             }
           />

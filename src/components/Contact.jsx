@@ -34,9 +34,9 @@ const Contact = () => {
     setFormStatus((prev) => ({ ...prev, loading: true }));
 
     // Replace these with your actual EmailJS service ID, template ID, and public key
-    const serviceId = "YOUR_SERVICE_ID";
-    const templateId = "YOUR_TEMPLATE_ID";
-    const publicKey = "YOUR_PUBLIC_KEY";
+    const serviceId = "service_izvmjqw";
+    const templateId = "template_jjxye4s";
+    const publicKey = "uPa9jn-XxoqQi1bkP";
 
     emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
       (result) => {
@@ -134,7 +134,7 @@ const Contact = () => {
                 <h4 className="font-semibold text-lg mb-4">Connect With Us</h4>
                 <div className="social-icons flex gap-4">
                   <a
-                    href="https://www.linkedin.com"
+                    href="https://www.linkedin.com/company/sysassist-it-solution/"
                     className="social-icon"
                     aria-label="LinkedIn"
                   >
@@ -152,7 +152,7 @@ const Contact = () => {
                     </div>
                   </a>
                   <a
-                    href="https://www.facebook.com"
+                    href="https://www.facebook.com/people/SysAssist/61564798423626/"
                     className="social-icon"
                     aria-label="Facebook"
                   >

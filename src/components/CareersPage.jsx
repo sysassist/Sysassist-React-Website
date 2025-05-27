@@ -124,10 +124,10 @@ const CareersPage = () => {
     // You can find these in your EmailJS dashboard
     emailjs
       .send(
-        "YOUR_SERVICE_ID", // Get from EmailJS dashboard
-        "YOUR_TEMPLATE_ID", // Get from EmailJS dashboard
+        "service_izvmjqw", // Get from EmailJS dashboard
+        "template_v2oe2kl", // Get from EmailJS dashboard
         templateParams,
-        "YOUR_PUBLIC_KEY" // Get from EmailJS dashboard
+        "uPa9jn-XxoqQi1bkP" // Get from EmailJS dashboard
       )
       .then((response) => {
         console.log("SUCCESS!", response.status, response.text);

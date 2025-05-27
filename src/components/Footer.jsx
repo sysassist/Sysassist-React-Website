@@ -16,7 +16,7 @@ const Footer = () => {
             </p>
             <div className="social-icons flex gap-3">
               <a
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/company/sysassist-it-solution/"
                 className="social-icon w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center"
               >
                 <div className="text-sm font-bold">in</div>
@@ -28,7 +28,7 @@ const Footer = () => {
                 <div className="text-sm font-bold">X</div>
               </a>
               <a
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/people/SysAssist/61564798423626/"
                 className="social-icon w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center"
               >
                 <div className="text-sm font-bold">f</div>

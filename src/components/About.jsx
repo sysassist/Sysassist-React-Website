@@ -11,6 +11,12 @@ import team3 from "/src/assets/DummyUser.jpg";
 import team4 from "/src/assets/DummyUser.jpg";
 import team5 from "/src/assets/DummyUser.jpg";
 import CompanyImag from "/src/assets/CompnayImage.jpg";
+import CompanyTeam from "/src/assets/SysAssist_Team_Pic.jpg";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const About = () => {
   const stats = [
@@ -43,8 +49,8 @@ const About = () => {
     { name: "Sunil Dharawat", role: "Frontend Developer", image: team1 },
     { name: "Deepak Patel", role: "Backend Developer", image: team2 },
     { name: "Aditya Jaiswal", role: "Java Developer", image: team3 },
-    { name: "Amit Gupta", role: "DevOps Engineer", image: team4 },
-    { name: "Kavita Nair", role: "Business Analyst", image: team5 },
+    // { name: "Amit Gupta", role: "DevOps Engineer", image: team4 },
+    // { name: "Kavita Nair", role: "Business Analyst", image: team5 },
   ];
 
   const sectionVariants = {
@@ -173,7 +179,7 @@ const About = () => {
           <h2 className="text-3xl font-bold text-center text-blue-700 mb-10">
             Meet Our Team
           </h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          <div className="flex justify-center items-center gap-4">
             {teamMembers.map((member, idx) => (
               <motion.div
                 key={idx}
@@ -192,6 +198,34 @@ const About = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+        {/* Photo Gallery Carousel Section */}
+        <div className="photo-gallery mt-20">
+          <h2 className="text-3xl font-bold text-center text-blue-700 mb-10">
+            Photo Gallery
+          </h2>
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={20}
+            slidesPerView={1}
+            // navigation
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 3000 }}
+            loop={true}
+            className="max-w-4xl mx-auto"
+          >
+            {[CompanyTeam, CompanyTeam, CompanyTeam].map((img, index) => (
+              <SwiperSlide key={index}>
+                <div className="rounded-xl overflow-hidden shadow-lg">
+                  <img
+                    src={img}
+                    alt={`Gallery image ${index + 1}`}
+                    className="w-full h-[400px] object-cover"
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>
