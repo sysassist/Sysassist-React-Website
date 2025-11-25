@@ -1,21 +1,24 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, BriefcaseBusiness, Laptop, Home, User, Contact, Server } from "lucide-react";
 
 const Navbar = ({ isScrolled }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "backdrop-blur-md bg-white/80 shadow-md" : "bg-transparent"
-      }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? "backdrop-blur-md bg-white/80 shadow-md" : "bg-transparent"
+        }`}
     >
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div className="container mx-auto px-4 py-1 flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <span className="text-2xl font-extrabold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+          {/* <span className="text-2xl font-extrabold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
             SysAssist.co
-          </span>
+          </span> */}
+          <img
+            className="w-20 h-20 rounded-full"
+            src="/Sys.png"
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -40,15 +43,17 @@ const Navbar = ({ isScrolled }) => {
             <div className="absolute left-0 hidden group-hover:flex flex-col bg-white shadow-xl border border-gray-200 rounded-xl mt-1 py-2 px-4 w-60 z-50 animate-fade-in">
               <Link
                 to="/services/it-consulting"
-                className="px-2 py-2 text-sm hover:bg-gray-50 hover:text-blue-600 rounded-md transition"
+                className="px-2 py-2 text-sm font-semibold hover:bg-gray-50 hover:text-blue-600 rounded-md transition"
               >
-                💼 IT Consulting
+                <span className="flex gap-2"><BriefcaseBusiness />  IT Consulting
+                </span>
               </Link>
               <Link
                 to="/services/it-staffing"
-                className="px-2 py-2 text-sm hover:bg-gray-50 hover:text-blue-600 rounded-md transition"
+                className="px-2 py-2 text-sm font-semibold hover:bg-gray-50 hover:text-blue-600 rounded-md transition"
               >
-                👨‍💻 IT Staffing
+                <span className="flex gap-2"><Laptop />   IT Staffing
+                </span>
               </Link>
             </div>
           </div>
@@ -62,12 +67,12 @@ const Navbar = ({ isScrolled }) => {
           </Link>
 
           {/* Careers */}
-          <Link
+          {/* <Link
             to="/careers"
             className="relative text-gray-700 hover:text-blue-600 transition font-medium hover:underline underline-offset-4"
           >
             Careers
-          </Link>
+          </Link> */}
 
           {/* Contact */}
           <Link
@@ -103,26 +108,26 @@ const Navbar = ({ isScrolled }) => {
               onClick={() => setIsOpen(false)}
               className="text-gray-700 hover:text-blue-600"
             >
-              🏠 Home
+              <span className="flex gap-1 font-semibold"><Home /> Home</span>
             </Link>
 
             {/* Mobile Services Section */}
             <div>
-              <span className="text-gray-700 font-medium">🛠️ Services</span>
+              <span className="text-gray-700 font-medium flex gap-1"><Server /> Services</span>
               <div className="ml-4 mt-2 space-y-2">
                 <Link
                   to="/services/it-consulting"
                   onClick={() => setIsOpen(false)}
                   className="text-sm text-gray-600 hover:text-blue-600"
                 >
-                  💼 IT Consulting
+                  <span className="flex gap-1 font-semibold"> <BriefcaseBusiness /> IT Consulting</span>
                 </Link>
                 <Link
                   to="/services/it-staffing"
                   onClick={() => setIsOpen(false)}
                   className="text-sm text-gray-600 hover:text-blue-600"
                 >
-                  👨‍💻 IT Staffing
+                  <span className="flex gap-1 font-semibold"><Laptop /> IT Staffing </span>
                 </Link>
               </div>
             </div>
@@ -132,21 +137,18 @@ const Navbar = ({ isScrolled }) => {
               onClick={() => setIsOpen(false)}
               className="text-gray-700 hover:text-blue-600"
             >
-              👥 About us
+              <span className="flex gap-1 font-semibold"> <User /> About us </span>
+
             </Link>
-            <Link
-              to="/careers"
-              onClick={() => setIsOpen(false)}
-              className="text-gray-700 hover:text-blue-600"
-            >
-              🧑‍💼 Careers
-            </Link>
+
             <Link
               to="/contact"
               onClick={() => setIsOpen(false)}
               className="text-gray-700 hover:text-blue-600"
             >
-              📞 Contact
+              <span className="flex gap-1 font-semibold"> <Contact /> Contact</span>
+
+
             </Link>
 
             <Link

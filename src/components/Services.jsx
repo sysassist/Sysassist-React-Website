@@ -118,8 +118,8 @@ const Services = () => {
             Our Services
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We provide comprehensive IT solutions tailored to meet your business
-            needs and drive digital transformation.
+            SysAssist provides a wide range of IT services to help you start, scale, and optimize your business.
+            Need something specific? Contact us for customized solutions tailored to your unique needs.
           </p>
         </motion.div>
 
@@ -182,7 +182,7 @@ const Services = () => {
           ))}
         </div>
 
-        <motion.div
+        {/* <motion.div
           className="mt-32"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -211,7 +211,7 @@ const Services = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

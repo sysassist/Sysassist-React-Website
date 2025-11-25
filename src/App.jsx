@@ -7,7 +7,6 @@ import About from "./components/About";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 import Clients from "./components/Clients";
-import Testimonials from "./components/Testimonials";
 import Process from "./components/Process";
 import ScrollToTop from "./components/ScrollToTop";
 import ServicesDetail from "./components/ServicesDetail";
@@ -40,10 +39,9 @@ function App() {
             element={
               <>
                 <Hero />
-                <Services />
                 <Process />
+                <Services />
                 <Clients />
-                {/* <Testimonials /> */}
               </>
             }
           />

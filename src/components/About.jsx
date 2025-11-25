@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 import vijayImage from "/src/assets/Vijay_Dwivedi_Passport_Photo.jpg";
 import sanjayImage from "/src/assets/SanjaySir1.jpg";
 import team1 from "/src/assets/SunilDharawat.png";
-import team2 from "/src/assets/DummyUser.jpg";
+import team2 from "/DeepakPatel.jpg";
 import team3 from "/src/assets/DummyUser.jpg";
-import team4 from "/src/assets/DummyUser.jpg";
-import team5 from "/src/assets/DummyUser.jpg";
+import team4 from "/HarshYadav.jpg";
+import team5 from "/Shlok.png";
 import CompanyImag from "/src/assets/CompnayImage.jpg";
 import CompanyTeam from "/src/assets/SysAssist_Team_Pic.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -19,13 +19,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const About = () => {
-  const stats = [
-    { value: "5+", label: "Years Experience" },
-    { value: "20+", label: "Clients" },
-    { value: "10+", label: "IT Experts" },
-    { value: "50+", label: "Projects" },
-  ];
-
   const coreValues = [
     {
       title: "Excellence",
@@ -46,11 +39,12 @@ const About = () => {
   ];
 
   const teamMembers = [
-    { name: "Sunil Dharawat", role: "Frontend Developer", image: team1 },
-    { name: "Deepak Patel", role: "Backend Developer", image: team2 },
+    { name: "Sunil Dharawat", role: "Software Developer", image: team1 },
+    { name: "Deepak Patel", role: "Software Developer", image: team2 },
+    { name: "Shlok Agrawal", role: "Software Developer", image: team5 },
     { name: "Aditya Jaiswal", role: "Java Developer", image: team3 },
-    // { name: "Amit Gupta", role: "DevOps Engineer", image: team4 },
-    // { name: "Kavita Nair", role: "Business Analyst", image: team5 },
+    { name: "Harsha Yadav", role: "Software Developer", image: team4 },
+    { name: "Aditi Gupta", role: "Software Developer", image: team3 },
   ];
 
   const sectionVariants = {
@@ -112,22 +106,6 @@ const About = () => {
                 ))}
               </ul>
             </div>
-            <div className="stats grid grid-cols-2 md:grid-cols-4 gap-4">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  className="stat-box p-6 text-center bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
-                  initial="hidden"
-                  whileInView="visible"
-                  variants={sectionVariants}
-                >
-                  <h4 className="text-3xl font-bold text-blue-600">
-                    {stat.value}
-                  </h4>
-                  <p className="text-gray-600">{stat.label}</p>
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
         </div>
 
@@ -141,12 +119,12 @@ const About = () => {
               {
                 name: "Vijay Dwivedi",
                 image: vijayImage,
-                description: `Vijay Dwivedi is a computer science post graduate with 30+ years of software industry experience. He is a seasoned IT professional with a strong background in database design, implementation, performance tuning, and troubleshooting. He spent 25+ years serving the Government of Oman, contributing to the ministry's IT infrastructure.`,
+                description: `Vijay Dwivedi is a computer science post graduate with 30+ years of software industry experience. He is a seasoned IT professional with over 30 years of experience in database administration, primarily focused on Oracle Databases and MS SQL Server. He has a strong background in database design, implementation, performance tuning, and troubleshooting. With a 25+ year tenure serving the Government of Oman, he has contributed significantly to One-of-the Ministry's IT infrastructure. His expertise also extends to Oracle Application Servers and front-end tools.`,
               },
               {
                 name: "Sanjay Agrawal",
                 image: sanjayImage,
-                description: `Sanjay Agrawal is a computer science post graduate with 30+ years of software industry experience. He has held senior management roles in companies delivering payments, telecom, and software services to global clients. With 25+ years in card payments and 3+ in telecom, he brings deep technical and strategic expertise.`,
+                description: `Sanjay Agrawal is a computer science post graduate with 30+ years of software industry experience. He has been associated with senior management roles with multiple software companies providing payments services, telecom services and software development services to prestigious global clients. He has demonstrated success in establishing and managing offshore software development centers, delivering critical projects/products, underpinned by a strong grasp of technical and financial dimensions. He has spent about 25+ years in card payments solutions and about 3+ years in telecom network solutions.`,
               },
             ].map((director, idx) => (
               <motion.div
@@ -179,7 +157,7 @@ const About = () => {
           <h2 className="text-3xl font-bold text-center text-blue-700 mb-10">
             Meet Our Team
           </h2>
-          <div className="flex justify-center items-center gap-4">
+          <div className="flex flex-col flex-wrap md:flex-row justify-center  gap-4">
             {teamMembers.map((member, idx) => (
               <motion.div
                 key={idx}

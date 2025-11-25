@@ -8,7 +8,6 @@ import {
   Cloud,
   Code,
   LineChart,
-  ArrowRight,
   ChevronRight,
 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -23,7 +22,7 @@ const ServicesDetail = () => {
 
   const services = {
     "it-consulting": {
-      title: "IT Consulting Services",
+      title: "IT Consulting",
       description:
         "Strategic technology solutions to optimize your business processes and drive innovation",
       heroImage: "/src/assets/IT_STAFF_Imag.jpg",
@@ -41,26 +40,32 @@ const ServicesDetail = () => {
         {
           title: "Project Management",
           description:
-            "Deliver end-to-end management of IT projects using industry best practices to ensure timely execution, clear communication, and stakeholder alignment.",
+            "Navigating the complexities of project management requires more than just experience - it demands a strategic approach, deep expertise, and a keen understanding of your business needs. Our Project Management Consulting services are designed to help you achieve project success, from initial planning through to successful execution and delivery.",
           icon: <Code size={32} />,
         },
         {
           title: "Agile Transformation",
           description:
-            "Implement Agile methodologies like Scrum and Kanban to increase team collaboration, accelerate delivery cycles, and adapt quickly to business changes.",
+            "In today’s rapidly evolving business landscape, agility is key to staying competitive and responsive. Our Agile Processes Consulting services are designed to transform your organization’s approach to project management, enhancing flexibility, collaboration, and efficiency. Whether you’re new to Agile or looking to optimize your existing practices, we provide tailored solutions to help you harness the full potential of Agile methodologies.",
           icon: <LineChart size={32} />,
         },
         {
-          title: "Technology Modernization",
+          title: "Technology Upgrades",
           description:
-            "Upgrade legacy systems, integrate emerging technologies, and enhance IT infrastructure to keep your business competitive and scalable.",
+            "In a rapidly evolving technological world, keeping your applications up-to-date is crucial for maintaining competitive advantage, enhancing performance, and ensuring security. Our Technology Upgrades services are designed to modernize your existing applications, leveraging the latest advancements to improve functionality, efficiency, and user experience.",
           icon: <Database size={32} />,
         },
         {
-          title: "Business Process Automation",
+          title: "Automation",
           description:
-            "Streamline workflows through automation tools, reducing manual effort and increasing operational efficiency across departments.",
+            "Testing, Build, Deployment, Release - Automating your build, test, and deployment processes can significantly streamline your workflow, reduce errors, and accelerate time-to-market. Our comprehensive automation services are designed to optimize your development lifecycle, ensuring that your software is delivered faster, more reliably, and with higher quality.",
           icon: <Cloud size={32} />,
+        },
+        {
+          title: "Database Services",
+          description:
+            "In today’s data-driven world, the efficiency, security, and reliability of your database systems are critical to the success of your business. Our comprehensive Database Services are designed to ensure that your data management is optimized, secure, and aligned with your business objectives. We offer Database Administration, Upgrades, High Availability, Disaster Recovery, Data Migration / Transformations / Integration consulting services to your specific needs.",
+          icon: <Database size={32} />,
         },
       ],
       process: [
@@ -97,9 +102,9 @@ const ServicesDetail = () => {
       ],
     },
     "it-staffing": {
-      title: "IT Staffing Solutions",
+      title: "IT Staffing",
       description:
-        "Access top-tier technology talent to fill critical roles in your projects and teams",
+        "We can help you find right talents by providing skilled/trained IT Staff.",
       heroImage: "/src/assets/IT_STAFF_Imag.jpg",
       icon: <Users size={48} />,
       intro:
@@ -113,27 +118,51 @@ const ServicesDetail = () => {
       ],
       services: [
         {
-          title: "Contract Staffing",
+          title: "Software Developers",
           description:
-            "Flexible staffing solutions for project-based needs, allowing you to quickly scale your team with specialized skills for specific initiatives.",
+            "Elite talent for building high-performance, scalable custom software.",
           icon: <Users size={32} />,
         },
         {
-          title: "Permanent Placement",
+          title: "Database Services",
           description:
-            "End-to-end recruitment services to help you find and hire full-time IT professionals who fit your technical requirements and company culture.",
+            "Expert management for secure, optimized, and accessible data infrastructure.",
           icon: <CheckCircle size={32} />,
         },
         {
-          title: "Staff Augmentation",
+          title: "Cloud Integrations / Migrations",
           description:
-            "Seamlessly integrate our consultants into your existing teams to fill skill gaps and accelerate project delivery.",
+            "Certified specialists for seamless cloud adoption and complex system integration.",
+          icon: <CheckCircle size={32} />,
+        },
+        {
+          title: "Product Management",
+          description:
+            "Functional, Performance, Security",
+          icon: <CheckCircle size={32} />,
+        },
+        {
+          title: "Software Technology Support",
+          description:
+            "Level 1, Level 2 and Level 3 support",
+          icon: <CheckCircle size={32} />,
+        },
+        {
+          title: "Automations",
+          description:
+            "Testing and Software Development and Integration Processes",
+          icon: <CheckCircle size={32} />,
+        },
+        {
+          title: "Project Management",
+          description:
+            "Project Managers, Program Managers, Scrum Masters",
           icon: <Code size={32} />,
         },
         {
-          title: "Executive Search",
+          title: "Agile Consultants",
           description:
-            "Specialized recruitment services for leadership and executive positions in IT and technology departments.",
+            "Planners, Product Owners, Scrum Masters, Release Train Engineers",
           icon: <LineChart size={32} />,
         },
       ],
@@ -216,7 +245,7 @@ const ServicesDetail = () => {
     <div className="service-detail">
       {/* Breadcrumbs */}
       <nav className="bg-gray-50 py-3 border-b border-gray-100 mt-15">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 mt-2">
           <div className="flex items-center text-sm">
             <Link to="/" className="text-gray-500 hover:text-blue-600">
               Home
@@ -275,53 +304,6 @@ const ServicesDetail = () => {
         </div>
       </div>
 
-      {/* Introduction */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="max-w-4xl mx-auto"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeIn}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-              Overview
-            </h2>
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-              {selectedService.intro}
-            </p>
-
-            <motion.div
-              className="mt-16"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-            >
-              <h3 className="text-2xl font-semibold mb-8 text-center">
-                Key Benefits
-              </h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                {selectedService.benefits.map((benefit, index) => (
-                  <motion.div
-                    key={index}
-                    className="flex items-start bg-gray-50 p-4 rounded-lg"
-                    variants={itemFadeIn}
-                  >
-                    <CheckCircle
-                      size={24}
-                      className="text-emerald-500 mr-4 mt-1 flex-shrink-0"
-                    />
-                    <span className="text-gray-800">{benefit}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Services */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -363,56 +345,7 @@ const ServicesDetail = () => {
         </div>
       </section>
 
-      {/* Process */}
-      <section className="py-20 bg-white relative">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeIn}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">
-              Our Approach
-            </h2>
-          </motion.div>
 
-          <div className="max-w-4xl mx-auto relative">
-            {/* Vertical line for process */}
-            <div className="hidden md:block absolute left-[22px] top-10 bottom-0 w-1 bg-blue-100 rounded-full"></div>
-
-            <motion.div
-              className="space-y-12"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-            >
-              {selectedService.process.map((process, index) => (
-                <motion.div
-                  key={index}
-                  className="flex flex-col md:flex-row"
-                  variants={itemFadeIn}
-                >
-                  <div className="relative">
-                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-600 text-white font-bold text-lg z-10 relative">
-                      {process.step}
-                    </div>
-                  </div>
-                  <div className="flex-1 md:ml-8 mt-4 md:mt-0">
-                    <div className="bg-gray-50 p-6 rounded-xl border border-gray-100">
-                      <h3 className="text-xl font-bold mb-3">
-                        {process.title}
-                      </h3>
-                      <p className="text-gray-700">{process.description}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-blue-800 to-indigo-900 text-white relative overflow-hidden">
@@ -445,88 +378,17 @@ const ServicesDetail = () => {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a
-                href="#contact"
+                href="contact"
                 className="px-8 py-4 bg-white text-blue-900 font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
                 Get Started
               </a>
-              {/* <a href="/case-studies" className="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-900 transition-all duration-300">
-                View Case Studies
-              </a> */}
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Related Services Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">
-            Related Services
-          </h2>
 
-          <div className="flex flex-col md:flex-row gap-8 max-w-4xl mx-auto">
-            <div className="bg-white rounded-xl shadow-md p-6 flex-1 border border-gray-100 hover:shadow-lg transition-all duration-300">
-              <div className="p-3 bg-blue-50 rounded-lg w-12 h-12 flex items-center justify-center text-blue-600 mb-4">
-                {serviceType === "it-consulting" ? (
-                  <Users size={24} />
-                ) : (
-                  <Server size={24} />
-                )}
-              </div>
-              <h3 className="text-xl font-bold mb-3">
-                {serviceType === "it-consulting"
-                  ? "IT Staffing Solutions"
-                  : "IT Consulting Services"}
-              </h3>
-              <p className="text-gray-600 mb-6">
-                {serviceType === "it-consulting"
-                  ? "Access top-tier technology talent to fill critical roles in your projects and teams."
-                  : "Strategic technology solutions to optimize your business processes and drive innovation."}
-              </p>
-              <Link
-                to={`/services/${
-                  serviceType === "it-consulting"
-                    ? "it-staffing"
-                    : "it-consulting"
-                }`}
-                className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors group"
-              >
-                Learn More
-                <ArrowRight
-                  size={16}
-                  className="ml-2 group-hover:translate-x-1 transition-transform duration-300"
-                />
-              </Link>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-md p-6 flex-1 border border-gray-100 hover:shadow-lg transition-all duration-300">
-              <div className="p-3 bg-blue-50 rounded-lg w-12 h-12 flex items-center justify-center text-blue-600 mb-4">
-                <Database size={24} />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Database Services</h3>
-              <p className="text-gray-600 mb-6">
-                Comprehensive database management, optimization, and support
-                services for your critical data systems.
-              </p>
-              <Link
-                to={`/services/${
-                  serviceType === "it-consulting"
-                    ? "it-staffing"
-                    : "it-consulting"
-                }`}
-                className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors group"
-              >
-                Learn More
-                <ArrowRight
-                  size={16}
-                  className="ml-2 group-hover:translate-x-1 transition-transform duration-300"
-                />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

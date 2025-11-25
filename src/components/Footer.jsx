@@ -77,14 +77,14 @@ const Footer = () => {
                   <ChevronRight size={16} className="mr-2" /> About us
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="/careers"
                   className="text-gray-300 hover:text-white flex items-center"
                 >
                   <ChevronRight size={16} className="mr-2" /> Careers
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -96,7 +96,7 @@ const Footer = () => {
                   to="/services/it-consulting"
                   className="text-gray-300 hover:text-white flex items-center"
                 >
-                  <ChevronRight size={16} className="mr-2" /> Project Management
+                  <ChevronRight size={16} className="mr-2" /> Project Managment
                 </Link>
               </li>
               <li>
@@ -113,7 +113,7 @@ const Footer = () => {
                   to="/services/it-consulting"
                   className="text-gray-300 hover:text-white flex items-center"
                 >
-                  <ChevronRight size={16} className="mr-2" /> Database Services
+                  <ChevronRight size={16} className="mr-2" />Agile Transformation
                 </Link>
               </li>
               <li>
@@ -121,7 +121,7 @@ const Footer = () => {
                   to="/services/it-staffing"
                   className="text-gray-300 hover:text-white flex items-center"
                 >
-                  <ChevronRight size={16} className="mr-2" /> Cloud Solutions
+                  <ChevronRight size={16} className="mr-2" />Cloud Integrations / Migrations
                 </Link>
               </li>
               <li>
@@ -129,7 +129,7 @@ const Footer = () => {
                   to="/services/it-consulting"
                   className="text-gray-300 hover:text-white flex items-center"
                 >
-                  <ChevronRight size={16} className="mr-2" /> Quality Assurance
+                  <ChevronRight size={16} className="mr-2" /> Database Services
                 </Link>
               </li>
             </ul>

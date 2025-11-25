@@ -2,58 +2,57 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
+  const scrollToServices = (e) => {
+    e.preventDefault();
+    const servicesSection = document.getElementById('services');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
   return (
     <div className="bg-gradient-to-br from-white via-blue-50 to-cyan-100 text-gray-900 relative overflow-hidden">
       <div className="container mx-auto px-4 py-20 md:py-32">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Hero Text */}
           <div className="hero-content animate-fade-in">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
-              Empowering Your{" "}
-              <span className="text-cyan-600">Digital Future</span>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-6 leading-tight">
+              SysAssist is an IT solutions company committed to delivering
+              <span className="text-cyan-600"> High-quality, Timely, and Cost-Effective services.</span>
+              {" "}
             </h1>
             <p className="text-lg md:text-xl mb-8 text-gray-700 max-w-lg">
-              SysAssist delivers innovative IT consulting and staffing solutions
-              tailored to fuel your business growth.
+              We specialize in offering comprehensive software solutions tailored to the diverse needs of our clients.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 items-center">
               <a
                 href="/contact"
-                className="bg-cyan-600 hover:bg-cyan-700 text-white py-3 px-6 rounded-full shadow-md transition-all flex items-center gap-2"
+                className="bg-cyan-600 hover:bg-cyan-700 text-white py-3 px-6  rounded-full shadow-md transition-all flex items-center gap-2"
               >
                 Get Started <ArrowRight size={20} />
               </a>
-              <a
-                href="/services/it-consulting"
+              <button
+                onClick={scrollToServices}
                 className="border border-cyan-600 text-cyan-700 hover:bg-cyan-600 hover:text-white py-3 px-6 rounded-full transition-all flex items-center gap-2"
               >
                 Our Services
-              </a>
+              </button>
             </div>
           </div>
 
-          {/* Hero Stats */}
-          <div className="hidden md:block animate-fade-in-slow">
-            <div className="relative bg-white/60 backdrop-blur-xl p-8 rounded-xl shadow-xl">
-              <div className="grid grid-cols-2 gap-6 text-center">
-                {[
-                  { label: "Clients Worldwide", value: "20+" },
-                  { label: "Years Experience", value: "5+" },
-                  { label: "IT Professionals", value: "10+" },
-                  { label: "Client Retention", value: "95%" },
-                ].map((stat, index) => (
-                  <div
-                    key={index}
-                    className="bg-white p-4 rounded-lg shadow hover:shadow-md transition transform hover:-translate-y-1"
-                  >
-                    <h3 className="text-4xl font-bold text-cyan-700">
-                      {stat.value}
-                    </h3>
-                    <p className="text-sm text-gray-600 mt-1">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
+          <div className="hidden md:block animate-fade-in-slow relative">
+            {/* Main Hero Image with Glow */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/10">
+              <img
+                src="/Hero_Img.png"
+                alt="Cloud Technology"
+                className="w-full h-auto"
+              />
             </div>
+
+
           </div>
         </div>
       </div>

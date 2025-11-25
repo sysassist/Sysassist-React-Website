@@ -99,11 +99,11 @@ const Clients = () => {
                   “{clientDetails.description}”
                 </p>
                 <div className="flex items-center">
-                  <div className="w-20 h-20 rounded-full overflow-hidden shadow-md mr-5">
+                  <div className="w-40 h-40 rounded-full overflow-hidden shadow-md mr-5">
                     <img
                       src={clientDetails.directorImage}
                       alt={clientDetails.directorName}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover shadow-2xl"
                     />
                   </div>
                   <div>
@@ -120,7 +120,7 @@ const Clients = () => {
           </div>
         </motion.div>
 
-        <div className="industries mt-20">
+        {/* <div className="industries mt-20">
           <h3 className="text-2xl font-bold mb-10 text-center text-gray-800">
             Industries We Serve
           </h3>
@@ -139,7 +139,7 @@ const Clients = () => {
               </motion.div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
