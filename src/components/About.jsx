@@ -129,7 +129,7 @@ const About = () => {
             ].map((director, idx) => (
               <motion.div
                 key={idx}
-                className="bg-white rounded-xl shadow-lg p-6 flex gap-6 items-start"
+                className="bg-white rounded-xl shadow-lg p-6 flex  flex-col md:flex-row gap-6 items-start "
                 initial="hidden"
                 whileInView="visible"
                 variants={sectionVariants}
@@ -137,7 +137,7 @@ const About = () => {
                 <img
                   src={director.image}
                   alt={director.name}
-                  className="w-24 h-24 rounded-full object-cover shadow-md"
+                  className="w-24 h-24 rounded-full object-fill shadow-md"
                 />
                 <div>
                   <h3 className="text-xl font-bold text-blue-700 mb-2">
@@ -198,7 +198,7 @@ const About = () => {
                   <img
                     src={img}
                     alt={`Gallery image ${index + 1}`}
-                    className="w-full h-[400px] object-cover"
+                    className="w-full h-[400px] object-fill"
                   />
                 </div>
               </SwiperSlide>

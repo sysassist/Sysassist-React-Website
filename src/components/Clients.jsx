@@ -98,8 +98,8 @@ const Clients = () => {
                 <p className="text-gray-700 text-lg italic leading-relaxed mb-10">
                   “{clientDetails.description}”
                 </p>
-                <div className="flex items-center">
-                  <div className="w-40 h-40 rounded-full overflow-hidden shadow-md mr-5">
+                <div className="flex flex-col items-center md:flex-row">
+                  <div className=" w-40 h-40 rounded-full overflow-hidden shadow-md mr-5">
                     <img
                       src={clientDetails.directorImage}
                       alt={clientDetails.directorName}

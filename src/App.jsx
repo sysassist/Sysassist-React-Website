@@ -11,6 +11,7 @@ import Process from "./components/Process";
 import ScrollToTop from "./components/ScrollToTop";
 import ServicesDetail from "./components/ServicesDetail";
 import CareersPage from "./components/CareersPage";
+import Testimonials from "./components/Testimonials";
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,11 +43,12 @@ function App() {
                 <Process />
                 <Services />
                 <Clients />
+                <Testimonials />
               </>
             }
           />
           <Route path="/services/:serviceType" element={<ServicesDetail />} />
-          <Route path="/careers" element={<CareersPage />} />
+          {/* <Route path="/careers" element={<CareersPage />} /> */}
           <Route path="/about-us" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
