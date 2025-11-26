@@ -3,15 +3,34 @@ import { CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 // Dummy image imports (Replace with actual image paths or URLs)
-import vijayImage from "/src/assets/Vijay_Dwivedi_Passport_Photo.jpg";
-import sanjayImage from "/src/assets/SanjaySir1.jpg";
-import team1 from "/src/assets/SunilDharawat.png";
+import vijayImage from "/Vijay_Dwivedi_Passport_Photo.jpg";
+import sanjayImage from "/SanjaySir1.jpg";
+import team1 from "/SunilDharawat.png";
 import team2 from "/DeepakPatel.jpg";
-import team3 from "/src/assets/DummyUser.jpg";
+import team3 from "/DummyUser.jpg";
+import team6 from "/Aditya.png";
 import team4 from "/HarshYadav.jpg";
 import team5 from "/Shlok.png";
-import CompanyImag from "/src/assets/CompnayImage.jpg";
-import CompanyTeam from "/src/assets/SysAssist_Team_Pic.jpg";
+import CompanyTeam from "/SysAssist_Team_Pic.jpg";
+import AnnualDay1 from "/annualday1.jpeg"
+import AnnualDay2 from "/annualday2.jpeg"
+import AnnualDay3 from "/annualday3.jpeg"
+import Team2 from "/Team2.jpeg"
+import Brithday1 from "/Birthday1.jpeg"
+import Brithday2 from "/Brithday2.jpeg"
+import Brithday3 from "/SelfiePhoto.jpeg"
+import Brithday4 from "/brithday3.jpeg"
+import OfficeImg from "/OfficeImg.png";
+import image1 from "/Image1.jpeg";
+import image2 from "/Image2.jpeg";
+import image3 from "/Image3.jpeg";
+import image4 from "/Image4.jpeg";
+import image5 from "/Image5.jpeg";
+import image6 from "/Image6.jpeg";
+import image7 from "/Image7.jpeg";
+import image8 from "/Image8.jpeg";
+import image9 from "/Image9.jpeg";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -42,7 +61,7 @@ const About = () => {
     { name: "Sunil Dharawat", role: "Software Developer", image: team1 },
     { name: "Deepak Patel", role: "Software Developer", image: team2 },
     { name: "Shlok Agrawal", role: "Software Developer", image: team5 },
-    { name: "Aditya Jaiswal", role: "Java Developer", image: team3 },
+    { name: "Aditya Jaiswal", role: "Java Developer", image: team6 },
     { name: "Harsha Yadav", role: "Software Developer", image: team4 },
     { name: "Aditi Gupta", role: "Software Developer", image: team3 },
   ];
@@ -68,9 +87,9 @@ const About = () => {
           >
             <div className="image-container rounded-xl overflow-hidden shadow-lg">
               <img
-                src={CompanyImag}
+                src={OfficeImg}
                 alt="Driving Digital Excellence"
-                className="w-full h-64 md:h-96 object-cover"
+                className="w-full  object-cover"
               />
             </div>
           </motion.div>
@@ -177,33 +196,65 @@ const About = () => {
             ))}
           </div>
         </div>
-        {/* Photo Gallery Carousel Section */}
-        <div className="photo-gallery mt-20">
-          <h2 className="text-3xl font-bold text-center text-blue-700 mb-10">
+
+        {/* Photo Gallery Section */}
+        <div className="photo-gallery mt-24">
+          <h2 className="text-3xl font-bold text-center text-blue-700 mb-12">
             Photo Gallery
           </h2>
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={20}
-            slidesPerView={1}
-            // navigation
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 3000 }}
-            loop={true}
-            className="max-w-4xl mx-auto"
-          >
-            {[CompanyTeam, CompanyTeam, CompanyTeam].map((img, index) => (
-              <SwiperSlide key={index}>
-                <div className="rounded-xl overflow-hidden shadow-lg">
-                  <img
-                    src={img}
-                    alt={`Gallery image ${index + 1}`}
-                    className="w-full h-[400px] object-fill"
-                  />
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+
+          {[
+            { title: "Annual Day", images: [image1, image2, AnnualDay1, AnnualDay2, image2, AnnualDay3, AnnualDay1,] },
+            { title: "Teams", images: [Team2, Brithday1, Brithday2, CompanyTeam, Brithday3, Team2, Brithday4,] },
+            { title: "Diwali Festival", images: [image6, image7, image8, image9, image3, image4, image5] },
+          ].map((category, idx) => (
+            <div key={idx} className="mb-20">
+              <h3 className="text-2xl font-bold text-center mb-8 text-blue-900 tracking-wide ">
+                {category.title}
+              </h3>
+
+              <Swiper
+                modules={[Navigation, Pagination, Autoplay]}
+                spaceBetween={30}
+                slidesPerView={2}
+                centeredSlides={true}
+                loop={true}
+                autoplay={{ delay: 2500, disableOnInteraction: false }}
+                pagination={{ clickable: true }}
+                className="max-w-6xl mx-auto !py-10 !pb-14 px-4"
+                // UPDATED BREAKPOINTS: More space on desktop
+                breakpoints={{
+                  0: { slidesPerView: 1, spaceBetween: 15 },
+                  640: { slidesPerView: 1.5, spaceBetween: 20 },
+                  768: { slidesPerView: 2, spaceBetween: 25 },
+                  1024: { slidesPerView: 3, spaceBetween: 40 }, // Increased space
+                  1280: { slidesPerView: 3.5, spaceBetween: 50 }, // Increased space
+                }}
+              >
+                {category.images.map((img, i) => (
+                  <SwiperSlide key={i}>
+                    {({ isActive }) => (
+                      <div
+                        // UPDATED CLASSES: md:rotate-0 removes tilt on desktop for a cleaner look
+                        className={`rounded-xl overflow-hidden shadow-lg transition-all duration-500 cursor-pointer
+                          ${isActive
+                            ? "scale-110 shadow-2xl rotate-0 z-10 opacity-100 ring-4 ring-white"
+                            : "scale-90 rotate-[-2deg] md:rotate-0 opacity-60 hover:opacity-100"
+                          }
+                        `}
+                      >
+                        <img
+                          src={img}
+                          alt={`${category.title} ${i + 1}`}
+                          className="w-full h-56 sm:h-64 md:h-72 object-cover"
+                        />
+                      </div>
+                    )}
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+          ))}
         </div>
       </div>
     </section>

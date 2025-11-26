@@ -55,7 +55,7 @@ const Clients = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Our Featured Client
+            Our Middle East Partner
           </motion.h2>
           <motion.p
             className="text-lg text-gray-600 max-w-3xl mx-auto"

@@ -11,7 +11,7 @@ const Testimonials = () => {
       quote:
         "The HRMS system developed for us streamlined our entire human resource operations. The team demonstrated exceptional understanding of our organizational needs and delivered a comprehensive solution that automated our recruitment, payroll, and performance management processes. Their attention to detail and responsive support made the transition smooth for our HR department.",
       rating: 5,
-      image: "src/assets/Nimisha-Awasthi.jpg",
+      image: "/Nimisha-Awasthi.jpg",
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ const Testimonials = () => {
       quote:
         "We approached the team to develop a Laboratory Management System (LMS) that could handle our complex workflow. The resulting system has transformed how we track samples, manage inventories, and generate reports. Their technical expertise and industry knowledge were evident in how they addressed our specific requirements. The LMS has significantly reduced errors and improved our operational efficiency.",
       rating: 4,
-      image: "src/assets/DummyUser.jpg",
+      image: "/DummyUser.jpg",
     },
     {
       id: 3,
@@ -29,7 +29,16 @@ const Testimonials = () => {
       quote:
         "We were facing compatibility issues with our mobile application on certain devices, causing us to lose a significant portion of potential users. The development team quickly identified the root causes and implemented solutions that expanded our app's compatibility across a wider range of mobile devices. Their technical troubleshooting skills and prompt resolution helped us increase our user base substantially.",
       rating: 5,
-      image: "src/assets/DummyUser.jpg",
+      image: "/DummyUser.jpg",
+    },
+    {
+      id: 4,
+      name: "Aashita Ravikumar",
+      position: "Bussiness Development Executive, Talent.in",
+      quote:
+        "Hii Teams thank you so much for all your help and patience, We are very happy with your service. We hope to work with your team in the future as well. Thanks a lot once again 🤝",
+      rating: 5,
+      image: "/DummyUser.jpg",
     },
   ];
 
@@ -146,9 +155,8 @@ const Testimonials = () => {
               <button
                 key={index}
                 onClick={() => setActiveIndex(index)}
-                className={`indicator-dot w-3 h-3 rounded-full ${
-                  activeIndex === index ? "bg-blue-600" : "bg-gray-300"
-                } transition-all duration-300`}
+                className={`indicator-dot w-3 h-3 rounded-full ${activeIndex === index ? "bg-blue-600" : "bg-gray-300"
+                  } transition-all duration-300`}
                 aria-label={`Go to testimonial ${index + 1}`}
               ></button>
             ))}
