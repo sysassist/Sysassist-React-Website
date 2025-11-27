@@ -29,7 +29,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename="/Sysassist-React-Website">
       <div className="app">
         <Navbar isScrolled={isScrolled} />
         <ScrollToTop />
