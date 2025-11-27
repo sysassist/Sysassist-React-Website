@@ -163,7 +163,7 @@ const Process = () => {
                         ))}
                       </ul>
                     ) : (
-                      <p className="text-slate-600 leading-relaxed text-base">
+                      <p className="text-slate-600 leading-relaxed text-base text-justify">
                         {service.description}
                       </p>
                     )}
