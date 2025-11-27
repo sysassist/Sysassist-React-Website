@@ -11,6 +11,7 @@ import team3 from "/DummyUser.jpg";
 import team6 from "/Aditya.png";
 import team4 from "/HarshYadav.jpg";
 import team5 from "/Shlok.png";
+import team7 from "/Aditi.jpg";
 import CompanyTeam from "/SysAssist_Team_Pic.jpg";
 import AnnualDay1 from "/annualday1.jpeg"
 import AnnualDay2 from "/annualday2.jpeg"
@@ -63,7 +64,7 @@ const About = () => {
     { name: "Shlok Agrawal", role: "Software Developer", image: team5 },
     { name: "Aditya Jaiswal", role: "Java Developer", image: team6 },
     { name: "Harsha Yadav", role: "Software Developer", image: team4 },
-    { name: "Aditi Gupta", role: "Software Developer", image: team3 },
+    { name: "Aditi Gupta", role: "Software Developer", image: team7 },
   ];
 
   const sectionVariants = {
