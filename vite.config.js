@@ -5,6 +5,7 @@ import react from "@vitejs/plugin-react";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  base: '/Sysassist-React-Website/',
 
   // server :{
   //   host:"192.168.1.17",
