@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import hero from "/Hero_Img.png"
 
 const Hero = () => {
   const scrollToServices = (e) => {
@@ -46,7 +47,7 @@ const Hero = () => {
             {/* Main Hero Image with Glow */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200/10">
               <img
-                src="/Hero_Img.png"
+                src={hero}
                 alt="Cloud Technology"
                 className="w-full h-auto"
               />

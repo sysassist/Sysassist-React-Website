@@ -414,6 +414,7 @@
 // export default Navbar;
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "/Sys.png";
 import { Menu, X, ChevronDown, ChevronRight, Briefcase, Users, Home, User, Mail, LayoutGrid, FolderKanban, GitBranch, Wrench, Zap, Database, Code, Cloud, ShieldCheck, Cog, UserCog, Server, BriefcaseBusiness, Laptop } from "lucide-react";
 
 const Navbar = ({ isScrolled }) => {
@@ -449,7 +450,7 @@ const Navbar = ({ isScrolled }) => {
         <Link to="/" className="flex items-center">
           <img
             className="w-10 h-10 md:w-18 md:h-18 rounded-full"
-            src="/Sys.png"
+            src={logo}
             alt="Logo"
           />
         </Link>

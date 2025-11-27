@@ -1,11 +1,16 @@
 import { motion } from "framer-motion";
 import { Code2, Wrench, Cloud, TestTube2, MonitorCog } from "lucide-react";
+import image1 from "/img1.png";
+import image2 from "/img2.png";
+import image3 from "/img3.png";
+import image4 from "/img4.png";
+import image5 from "/img5.png";
 
 const Process = () => {
   const serviceList = [
     {
       icon: Code2,
-      image: "/img1.png",
+      image: image1,
       title: "Custom/Bespoke Applications Development",
       description:
         "In today’s fast-paced digital landscape, off-the-shelf solutions often fall short of meeting unique business needs. That’s where our Custom/Bespoke Applications Development service comes into play. We specialize in designing and building tailor-made software solutions that align perfectly with your organization’s objectives and processes.",
@@ -14,7 +19,7 @@ const Process = () => {
     },
     {
       icon: Wrench,
-      image: "/img2.png",
+      image: image2,
       title: "Maintenance of Existing Applications",
       description: [
         "Complete rewrite of existing applications using modern technologies",
@@ -29,7 +34,7 @@ const Process = () => {
     ,
     {
       icon: Cloud,
-      image: "/img3.png",
+      image: image3,
       title: "Cloud Migration and Business Decisions using AI/ML",
       description:
         "In an era where agility and scalability are paramount, migrating your existing applications to cloud and use AI/ML based indicators for your business decisions, is a strategic move. It can redefine how your business operates. Whether you’re looking to develop new applications or transition existing ones, our expert cloud migration services ensure a seamless shift to public or private cloud environments, tailored to your specific needs.",
@@ -38,7 +43,7 @@ const Process = () => {
     },
     {
       icon: TestTube2,
-      image: "/img4.png",
+      image: image4,
       title: "Quality Assurance Services and Automations",
       description:
         "In today’s competitive market, delivering high-quality software is a necessity. Our comprehensive Quality Assurance (QA) services ensure that your applications meet the highest standards of functionality, performance, and security. With a focus on both manual and automated testing, we help you deliver reliable, efficient, and secure software solutions.",
@@ -47,7 +52,7 @@ const Process = () => {
     },
     {
       icon: MonitorCog,
-      image: "/img5.png",
+      image: image5,
       title: "Automation of Build, Test, Deployment Processes",
       description:
         "Automating your build, test, and deployment processes can significantly streamline your workflow, reduce errors, and accelerate time-to-market. Our comprehensive automation services are designed to optimize your development lifecycle, ensuring that your software is delivered faster, more reliably, and with higher quality.",

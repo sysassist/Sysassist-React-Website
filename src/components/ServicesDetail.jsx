@@ -18,6 +18,7 @@ import {
   UserCog,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import serviceImg1 from "/IT_STAFF_Imag.jpg"
 
 const ServicesDetail = () => {
   const { serviceType } = useParams();
@@ -52,7 +53,7 @@ const ServicesDetail = () => {
       title: "IT Consulting",
       description:
         "Strategic technology solutions to optimize your business processes and drive innovation",
-      heroImage: "/src/assets/IT_STAFF_Imag.jpg",
+      heroImage: serviceImg1,
       icon: <Server size={48} />,
       intro:
         "Our IT consulting services are designed to help businesses leverage technology effectively to solve complex challenges, improve operational efficiency, and achieve strategic goals.",
@@ -103,7 +104,7 @@ const ServicesDetail = () => {
       title: "IT Staffing",
       description:
         "We can help you find right talents by providing skilled/trained IT Staff.",
-      heroImage: "/src/assets/IT_STAFF_Imag.jpg",
+      heroImage: serviceImg1,
       icon: <Users size={48} />,
       intro:
         "Our IT staffing services provide access to a vast network of pre-vetted technology professionals across various domains.",

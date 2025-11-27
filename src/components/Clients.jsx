@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import companyImg from "/Abhijeet_Company_Pic2.jpg";
+import directorImg from "/Abhijeet_Pic1.jpg";
 
 const Clients = () => {
   // Client details src\assets\Abhijeet_Pic1.jpg
@@ -7,8 +9,8 @@ const Clients = () => {
     name: "NET TECH INNOVATIONS S.P.C. (Sultanate of Oman)",
     description:
       "With deep roots in Oman and over 8 years of experience in the telecom and IT industry, Abhijeet Singh Rana leads the company with a strong understanding of the local market and a commitment to delivering reliable, high-quality technology solutions. Under his leadership, the company has become a trusted provider of IT, software, and basic AV services, and is proudly recognized as a B2B channel partner for Vodafone Oman. We have successfully executed a wide range of projects for clients across various sectors, including Nakheel Oman Development Company, Azzan Bin Qais Education Group, Mohsin Haider Darwish (MHD), and many others.",
-    companyImage: "src/assets/Abhijeet_Company_Pic2.jpg",
-    directorImage: "src/assets/Abhijeet_Pic1.jpg",
+    companyImage: companyImg,
+    directorImage: directorImg,
     directorName: "Abhijeet Singh Rana",
     directorTitle: "Founder & Managing Partner",
   };
