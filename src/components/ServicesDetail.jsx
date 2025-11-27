@@ -209,7 +209,7 @@ const ServicesDetail = () => {
               Home
             </Link>
             <ChevronRight size={16} className="mx-2 text-gray-400" />
-            <Link to="/services" className="text-gray-500 hover:text-blue-600">
+            <Link to="/" className="text-gray-500 hover:text-blue-600">
               Services
             </Link>
             <ChevronRight size={16} className="mx-2 text-gray-400" />

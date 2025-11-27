@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import hero from "/Hero_Img.png"
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const scrollToServices = (e) => {
@@ -28,12 +29,18 @@ const Hero = () => {
               We specialize in offering comprehensive software solutions tailored to the diverse needs of our clients.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 items-center">
-              <a
+              {/* <a
                 href="/contact"
                 className="bg-cyan-600 hover:bg-cyan-700 text-white py-3 px-6  rounded-full shadow-md transition-all flex items-center gap-2"
               >
                 Get Started <ArrowRight size={20} />
-              </a>
+              </a> */}
+              <Link
+                to="/contact"
+                className="bg-cyan-600 hover:bg-cyan-700 text-white py-3 px-6 rounded-full shadow-md transition-all flex items-center gap-2"
+              >
+                Get Started <ArrowRight size={20} />
+              </Link>
               <button
                 onClick={scrollToServices}
                 className="border border-cyan-600 text-cyan-700 hover:bg-cyan-600 hover:text-white py-3 px-6 rounded-full transition-all flex items-center gap-2"
