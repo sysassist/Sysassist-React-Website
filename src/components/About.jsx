@@ -104,7 +104,7 @@ const About = () => {
             <h2 className="text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">
               About SysAssist
             </h2>
-            <p className="text-lg text-gray-700 mb-6">
+            <p className="text-lg text-gray-700 mb-6 text-justify">
               SysAssist is a premier IT consulting and staffing firm dedicated
               to delivering innovative technology solutions that drive business
               success. Our team of experienced professionals works closely with
@@ -163,7 +163,7 @@ const About = () => {
                   <h3 className="text-xl font-bold text-blue-700 mb-2">
                     {director.name}
                   </h3>
-                  <p className="text-gray-700 text-sm">
+                  <p className="text-gray-700 text-sm text-justify">
                     {director.description}
                   </p>
                 </div>

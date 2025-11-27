@@ -294,7 +294,7 @@ const ServicesDetail = () => {
                   {service.icon}
                 </div>
                 <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed text-justify">
                   {service.description}
                 </p>
               </motion.div>
