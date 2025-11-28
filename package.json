@@ -1,7 +1,7 @@
 {
   "name": "sysassist-web-react",
   "private": true,
-  "homepage": "https://sysassist.co",
+  "homepage": "https://sysassist.github.io/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
