@@ -529,6 +529,13 @@ const Navbar = ({ isScrolled }) => {
             </div>
           </div>
 
+          {/* Clients */}
+          <Link
+            to="/clients"
+            className="relative text-gray-700 hover:text-blue-600 transition font-medium hover:underline underline-offset-4"
+          >
+            Clients
+          </Link>
           {/* About Us */}
           <Link
             to="/about-us"
@@ -639,6 +646,13 @@ const Navbar = ({ isScrolled }) => {
               </div>
             </div>
 
+            <Link
+              to="/clients"
+              onClick={() => setIsOpen(false)}
+              className="text-gray-700 hover:text-blue-600"
+            >
+              <span className="flex gap-1 font-semibold">Clients</span>
+            </Link>
             <Link
               to="/about-us"
               onClick={() => setIsOpen(false)}

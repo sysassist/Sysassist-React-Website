@@ -49,6 +49,7 @@ function App() {
             }
           />
           <Route path="/services/:serviceType" element={<ServicesDetail />} />
+          <Route path="/clients" element={<Testimonials />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
