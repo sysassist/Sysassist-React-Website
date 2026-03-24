@@ -11,6 +11,7 @@ import Process from "./components/Process";
 import ScrollToTop from "./components/ScrollToTop";
 import ServicesDetail from "./components/ServicesDetail";
 import Testimonials from "./components/Testimonials";
+import PrivacyPolicy from "./components/PrivacyPolicy";
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,6 +51,7 @@ function App() {
           <Route path="/services/:serviceType" element={<ServicesDetail />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
         <Footer />
       </div>
