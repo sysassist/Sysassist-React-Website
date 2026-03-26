@@ -177,58 +177,39 @@ const Testimonials = () => {
   const caseStudies = [
     {
       id: 1,
-      clientName: "Swashrayee Mahila Sakh Sahakari Sanstha Maryadit",
-      clientAlias: "SEWA",
-      systemName: "HRMS & Attendance Intelligence Solution",
-      systemUrl: "https://smssmhrm.in:8082/login",
+      clientName: "Confidential U.S. based Enterprise",
+      clientAlias: "Google Cloud Platform",
+      systemName: "GCP Secure Landing Zone",
       description:
-        "We designed and developed a comprehensive Human Resource Management System (HRMS) for Swashrayee Mahila Sakh Sahakari Sanstha Maryadit, a co-operative bank — covering end-to-end employee lifecycle and workforce operations.",
-      keyCapabilities: [
-        "Centralised employee information and lifecycle management",
-        "Leave master configuration, request workflows, and multi-category approval chains",
-        "Payroll processing with support for performance-linked quarterly bonus structures",
-        "Biometric infrastructure integration — automated punch-in/punch-out attendance capture",
-        "WhatsApp integration for leave applications, approvals, and salary slip access",
-        "Mobile-responsive interface for employees and managers",
-        "Dashboards for attendance monitoring, field activity tracking, and time-off management",
+        "We partnered with a U.S. based enterprise to provide technical consulting for the design and implementation of a secure landing data platform on Google Cloud Platform (GCP). The objective was to establish a robust and secure data environment capable of aggregating and transforming data from multiple existing systems. This platform was designed to streamline data accessibility while maintaining strong governance and security standards. Our approach focused on building a scalable “landing zone” that enables structured data ingestion, transformation, and organization to support a variety of downstream use cases. This foundation allows the enterprise to leverage its data more effectively for analytics and informed decision-making.",
+      scopeOfWork: [
+        "Provided technical consulting for designing a secure landing data platform on GCP",
+        "Architected a scalable landing zone for structured data ingestion and transformation",
+        "Integrated data from multiple existing systems into a unified cloud environment",
+        "Implemented data governance, security standards, and access controls",
+        "Designed data organization to support downstream analytics and use cases"
       ],
-      techStack: ["React.js", "Tailwind CSS", "HTML", "Node.js", "SQL", "Cloud API Integration"],
+      techStack: [
+        "Google Cloud Platform (GCP)",
+        "BigQuery",
+        "Cloud Storage",
+        "Dataflow",
+        "Pub/Sub",
+        "IAM & Security Tools"
+      ],
       outcome:
-        "A fully integrated workforce management platform that brought together HR operations, biometric attendance, and mobile accessibility into a single system — delivering measurable improvements in efficiency, transparency, and payroll accuracy for the organisation.",
-      image: "/hrms-dashboard.jpg",
-      testimonialAuthor: "Nimisha Avasthi",
+        "Enabled the enterprise to aggregate and transform data from multiple systems into a secure and scalable cloud platform. Improved data accessibility, maintained strong governance standards, and established a solid foundation for analytics and data-driven decision-making.",
+      image: "/parts-intelligence.jpg",
+      testimonialAuthor: "Sarif",
       type: "web",
     },
     {
       id: 2,
-      clientName: "Scientific Systems & Chemicals (P) Ltd.",
-      clientAlias: "SSCM",
-      systemName: "Enterprise CRM",
-      clientWebsite: "www.sscmp.com",
-      description:
-        "We built a purpose-driven Customer Relationship Management system for Scientific Systems & Chemicals (P) Ltd., a B2B supplier of chemical and laboratory equipment based in Bhopal. The requirement was a centralised, scalable platform to replace fragmented manual workflows across their sales and operations teams — covering the entire customer lifecycle from first enquiry to final quotation.",
-      keyCapabilities: [
-        "Enquiry tracking and sales pipeline management",
-        "Quotation generation with real-time PDF preview and export",
-        "Product catalog management with structured data architecture",
-        "Role-based access control — Admin, Manager, Sales Coordinator, Sales Executive",
-        "Party and customer master management",
-        "Comprehensive reporting suite with PDF export",
-      ],
-      techStack: ["React.js", "Node.js", "SQL", "PDF Generation Engine", "RBAC Architecture"],
-      outcome:
-        "A responsive, enterprise-grade interface that replaced scattered spreadsheets with a unified source of truth — enabling the sales team to operate with measurably greater speed and visibility.",
-      image: "/crm-dashboard.jpg",
-      testimonialAuthor: "Manish Vijayraj",
-      type: "web",
-    },
-    {
-      id: 3,
       clientName: "Leading Oil Extraction Company",
-      clientAlias: "Oil Extraction Partner",
+      clientAlias: "Leading Oil Extraction Company",
       systemName: "Legacy Manual Digitization & Parts Intelligence Program",
       description:
-        "We partnered with a leading oil extraction company to transform decades of unstructured equipment documentation into a structured, intelligent parts inventory system. This project focused on building a structured spare parts intelligence layer from legacy equipment manuals spanning over two decades.",
+        "We partnered with a leading oil extraction company in Sultanate of Oman to transform decades of unstructured equipment documentation into a structured, intelligent parts inventory system. This project focused on building a structured spare parts intelligence layer from legacy equipment manuals spanning over two decades.",
       scopeOfWork: [
         "OCR-based extraction and processing of multi-year vendor documentation",
         "Automated identification of critical spare parts and associated technical attributes",
@@ -243,32 +224,7 @@ const Testimonials = () => {
       type: "web",
     },
     {
-      id: 4,
-      clientName: "Pikvan",
-      clientAlias: "Pikvan",
-      systemName: "Auditor Workflow Management Mobile Application",
-      description:
-        "We developed a comprehensive cross-platform mobile application for Pikvan to streamline their auditing operations and field workforce management. The solution enables auditing firms to efficiently manage and monitor their auditors deployed at various dealer locations.",
-      keyCapabilities: [
-        "Real-time GPS location tracking of auditors at dealer sites",
-        "Selfie-based verification with timestamp and geotagging",
-        "Automated time logging for audit duration tracking",
-        "Offline capability with sync when connectivity is restored",
-        "Digital audit checklist and report generation",
-        "Manager dashboard for real-time monitoring and assignment tracking",
-        "Photo documentation with metadata embedding",
-        "Route optimization for multi-location audit schedules",
-      ],
-      techStack: ["React Native", "Node.js", "MYSQL", "Google Maps API"],
-      outcome:
-        "A robust mobile solution that transformed field audit operations, eliminating manual paperwork and providing real-time visibility into auditor activities. The app significantly improved accountability, reduced audit completion times, and enhanced data accuracy for the auditing firm.",
-      image: "/auditor-app.jpg",
-      testimonialAuthor: "Vinita Rathi",
-      type: "mobile",
-      platforms: ["Android", "iOS"],
-    },
-    {
-      id: 5,
+      id: 3,
       clientName: "Talent In",
       clientAlias: "Talent In",
       systemName: "Bilingual Talent Acquisition Platform",
@@ -293,6 +249,80 @@ const Testimonials = () => {
       type: "web",
       clientLocation: "Oman",
     },
+    {
+      id: 4,
+      clientName: "Swashrayee Mahila Sakh Sahakari Sanstha Maryadit",
+      clientAlias: "SEWA",
+      systemName: "HRMS & Attendance Intelligence Solution",
+      systemUrl: "https://smssmhrm.in:8082/login",
+      description:
+        "We designed and developed a comprehensive Human Resource Management System (HRMS) for Swashrayee Mahila Sakh Sahakari Sanstha Maryadit, a co-operative bank — covering end-to-end employee lifecycle and workforce operations.",
+      keyCapabilities: [
+        "Centralised employee information and lifecycle management",
+        "Leave master configuration, request workflows, and multi-category approval chains",
+        "Payroll processing with support for performance-linked quarterly bonus structures",
+        "Biometric infrastructure integration — automated punch-in/punch-out attendance capture",
+        "WhatsApp integration for leave applications, approvals, and salary slip access",
+        "Mobile-responsive interface for employees and managers",
+        "Dashboards for attendance monitoring, field activity tracking, and time-off management",
+      ],
+      techStack: ["React.js", "Tailwind CSS", "HTML", "Node.js", "SQL", "Cloud API Integration"],
+      outcome:
+        "A fully integrated workforce management platform that brought together HR operations, biometric attendance, and mobile accessibility into a single system — delivering measurable improvements in efficiency, transparency, and payroll accuracy for the organisation.",
+      image: "/hrms-dashboard.jpg",
+      testimonialAuthor: "Nimisha Avasthi",
+      type: "web",
+    },
+    {
+      id: 5,
+      clientName: "Scientific Systems & Chemicals (P) Ltd.",
+      clientAlias: "SSCM",
+      systemName: "Enterprise CRM",
+      clientWebsite: "www.sscmp.com",
+      description:
+        "We built a purpose-driven Customer Relationship Management system for Scientific Systems & Chemicals (P) Ltd., a B2B supplier of chemical and laboratory equipment based in Bhopal. The requirement was a centralised, scalable platform to replace fragmented manual workflows across their sales and operations teams — covering the entire customer lifecycle from first enquiry to final quotation.",
+      keyCapabilities: [
+        "Enquiry tracking and sales pipeline management",
+        "Quotation generation with real-time PDF preview and export",
+        "Product catalog management with structured data architecture",
+        "Role-based access control — Admin, Manager, Sales Coordinator, Sales Executive",
+        "Party and customer master management",
+        "Comprehensive reporting suite with PDF export",
+      ],
+      techStack: ["React.js", "Node.js", "SQL", "PDF Generation Engine", "RBAC Architecture"],
+      outcome:
+        "A responsive, enterprise-grade interface that replaced scattered spreadsheets with a unified source of truth — enabling the sales team to operate with measurably greater speed and visibility.",
+      image: "/crm-dashboard.jpg",
+      testimonialAuthor: "Manish Vijayraj",
+      type: "web",
+    },
+
+    {
+      id: 6,
+      clientName: "Pikvan",
+      clientAlias: "Pikvan",
+      systemName: "Auditor Workflow Management Mobile Application",
+      description:
+        "We developed a comprehensive cross-platform mobile application for Pikvan to streamline their auditing operations and field workforce management. The solution enables auditing firms to efficiently manage and monitor their auditors deployed at various dealer locations.",
+      keyCapabilities: [
+        "Real-time GPS location tracking of auditors at dealer sites",
+        "Selfie-based verification with timestamp and geotagging",
+        "Automated time logging for audit duration tracking",
+        "Offline capability with sync when connectivity is restored",
+        "Digital audit checklist and report generation",
+        "Manager dashboard for real-time monitoring and assignment tracking",
+        "Photo documentation with metadata embedding",
+        "Route optimization for multi-location audit schedules",
+      ],
+      techStack: ["React Native", "Node.js", "MYSQL", "Google Maps API"],
+      outcome:
+        "A robust mobile solution that transformed field audit operations, eliminating manual paperwork and providing real-time visibility into auditor activities. The app significantly improved accountability, reduced audit completion times, and enhanced data accuracy for the auditing firm.",
+      image: "/auditor-app.jpg",
+      testimonialAuthor: "Vinita Rathi",
+      type: "mobile",
+      platforms: ["Android", "iOS"],
+    },
+
   ];
 
   // Updated Testimonials with project-specific details
