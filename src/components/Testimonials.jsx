@@ -185,9 +185,7 @@ const Testimonials = () => {
       scopeOfWork: [
         "Provided technical consulting for designing a secure landing data platform on GCP",
         "Architected a scalable landing zone for structured data ingestion and transformation",
-        "Integrated data from multiple existing systems into a unified cloud environment",
-        "Implemented data governance, security standards, and access controls",
-        "Designed data organization to support downstream analytics and use cases"
+        "Implemented data governance, security standards, and access controls"
       ],
       techStack: [
         "Google Cloud Platform (GCP)",
