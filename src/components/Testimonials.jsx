@@ -226,7 +226,8 @@ const Testimonials = () => {
       clientName: "Talent In",
       clientAlias: "Talent In",
       systemName: "Bilingual Talent Acquisition Platform",
-      systemUrl: "https://talent-in.com/",
+      // systemUrl: "https://talent-in.com/",
+      clientWebsite: "www.talent-in.com/",
       description:
         "We built a sophisticated bilingual web application for our Omani client Talent In, a dynamic talent acquisition firm specializing in executive search and people development. The platform serves as a comprehensive solution for hunting top talent and acquiring candidates for various industries in the Oman market.",
       keyCapabilities: [
@@ -252,7 +253,8 @@ const Testimonials = () => {
       clientName: "Swashrayee Mahila Sakh Sahakari Sanstha Maryadit",
       clientAlias: "SEWA",
       systemName: "HRMS & Attendance Intelligence Solution",
-      systemUrl: "https://smssmhrm.in:8082/login",
+      clientWebsite: "www.smssmcoop.org/",
+      // systemUrl: "https://smssmhrm.in:8082/login",
       description:
         "We designed and developed a comprehensive Human Resource Management System (HRMS) for Swashrayee Mahila Sakh Sahakari Sanstha Maryadit, a co-operative bank — covering end-to-end employee lifecycle and workforce operations.",
       keyCapabilities: [
@@ -299,6 +301,7 @@ const Testimonials = () => {
       id: 6,
       clientName: "Pikvan",
       clientAlias: "Pikvan",
+      clientWebsite: "www.pikvan.com/",
       systemName: "Auditor Workflow Management Mobile Application",
       description:
         "We developed a comprehensive cross-platform mobile application for Pikvan to streamline their auditing operations and field workforce management. The solution enables auditing firms to efficiently manage and monitor their auditors deployed at various dealer locations.",
