@@ -99,7 +99,7 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold text-lg">Phone</h4>
                     <p className="text-gray-600">+91 9987986053</p>
-                    <p className="text-gray-600">Mon-Fri, 10AM-6PM EST</p>
+                    <p className="text-gray-600">Mon-Fri, 10AM-6PM IST</p>
                   </div>
                 </div>
 
@@ -171,11 +171,10 @@ const Contact = () => {
 
               {formStatus.submitted ? (
                 <div
-                  className={`form-message p-4 rounded-lg ${
-                    formStatus.error
+                  className={`form-message p-4 rounded-lg ${formStatus.error
                       ? "bg-red-100 text-red-700"
                       : "bg-green-100 text-green-700"
-                  }`}
+                    }`}
                 >
                   {formStatus.message}
                 </div>
@@ -300,9 +299,8 @@ const Contact = () => {
 
                   <button
                     type="submit"
-                    className={`btn-submit bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-lg transition-colors flex gap-2 items-center ${
-                      formStatus.loading ? "opacity-70 cursor-not-allowed" : ""
-                    }`}
+                    className={`btn-submit bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-lg transition-colors flex gap-2 items-center ${formStatus.loading ? "opacity-70 cursor-not-allowed" : ""
+                      }`}
                   >
                     {formStatus.loading ? "Sending..." : "Send Message"}{" "}
                     <Send size={16} />
