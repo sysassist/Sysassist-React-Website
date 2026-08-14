@@ -12,10 +12,15 @@ import team6 from "/Aditya.png";
 import team4 from "/HarshYadav.jpg";
 import team5 from "/Shlok.png";
 import team7 from "/Aditi.jpg";
+import team8 from "/prabalpatidar.jpg";
 import CompanyTeam from "/SysAssist_Team_Pic.jpg";
 import AnnualDay1 from "/annualday1.jpeg"
 import AnnualDay2 from "/annualday2.jpeg"
 import AnnualDay3 from "/annualday3.jpeg"
+import AnnualTeamDay4 from "/TeamImg4.jpeg"
+import AnnualTeamDay5 from "/TeamImg1.jpeg"
+import AnnualTeamDay6 from "/TeamImg3.jpeg"
+import AnnualTeamDay7 from "/TeamImg2.jpeg"
 import Team2 from "/Team2.jpeg"
 import Brithday1 from "/Birthday1.jpeg"
 import Brithday2 from "/Brithday2.jpeg"
@@ -31,6 +36,7 @@ import image6 from "/Image6.jpeg";
 import image7 from "/Image7.jpeg";
 import image8 from "/Image8.jpeg";
 import image9 from "/Image9.jpeg";
+
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -65,6 +71,7 @@ const About = () => {
     { name: "Aditya Jaiswal", role: "Java Developer", image: team6 },
     { name: "Harsha Yadav", role: "Software Developer", image: team4 },
     { name: "Aditi Gupta", role: "Software Developer", image: team7 },
+    { name: "Prabal Patidar", role: "Software Developer", image: team8 },
   ];
 
   const sectionVariants = {
@@ -205,7 +212,7 @@ const About = () => {
           </h2>
 
           {[
-            { title: "Annual Day", images: [image1, image2, AnnualDay1, AnnualDay2, image2, AnnualDay3, AnnualDay1,] },
+            { title: "Annual Day", images: [AnnualTeamDay4, AnnualTeamDay5, AnnualTeamDay6, AnnualTeamDay7, image1, image2, AnnualDay2, AnnualDay3, AnnualDay1,] },
             { title: "Teams", images: [Team2, Brithday1, Brithday2, CompanyTeam, Brithday3, Team2, Brithday4,] },
             { title: "Diwali Festival", images: [image6, image7, image8, image9, image3, image4, image5] },
           ].map((category, idx) => (

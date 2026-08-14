@@ -173,6 +173,12 @@ import { ChevronLeft, ChevronRight, Star, ExternalLink, Smartphone, Globe } from
 import { motion } from "framer-motion";
 
 const Testimonials = () => {
+  const getWebsiteHref = (website) => {
+    if (!website) return "";
+
+    return /^https?:\/\//i.test(website) ? website : `https://${website}`;
+  };
+
   // Project Case Studies - What We Provide Section
   const caseStudies = [
     {
@@ -323,7 +329,84 @@ const Testimonials = () => {
       type: "mobile",
       platforms: ["Android", "iOS"],
     },
+    {
+      id: 7,
+      clientName: "Dar Al Amal",
+      clientAlias: "DAAOM",
+      clientWebsite: "https://crm.nettechoman.com/",
+      systemName: "Enterprise Sales CRM & Operations Management Platform",
+      description:
+        "We designed and developed a full-featured, real-time Sales CRM and Enterprise Operations Platform for Dar Al Amal, streamlining end-to-end B2B lead lifecycles, field operations, automated commission payouts, fuel tracking, contract renewals, and financial ledgers into a single unified cloud system.",
+      keyCapabilities: [
+        "Visual sales pipeline and lead management with customizable stages and location-stamped stage history",
+        "Automated commission and payout engine with target calculations, eligibility thresholds, acquisition bonuses, recurring commissions, salary deductions, and payout locking workflows",
+        "Fleet and fuel log management with mileage tracking, receipt attachments, manager approvals, and consumption analytics",
+        "Contract renewal and expiry tracking with countdown intelligence, auto-renewals, document attachments, and notification alerts",
+        "Field attendance and geolocation-based check-in/check-out for sales representatives and client visits",
+        "Finance ledger and P&L analytics with income, expense, capital entries, and profit/loss dashboards",
+      ],
+      techStack: [
+        "Next.js 14",
+        "React.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Supabase",
+        "PostgreSQL",
+        "Supabase Edge Functions",
+        "Contabo Cloud Hosting",
+      ],
+      outcome:
+        "A unified operational command center that replaced manual spreadsheets with automated commission calculation, field geolocation verification, and transparent financial reporting. The platform significantly improved sales representative accountability and reduced monthly payout processing time by over 80%.",
+      image: "/dar-al-amal-crm.jpg",
+      testimonialAuthor: "",
+      type: "web",
+      platforms: ["Web"],
+    },
+    {
+      id: 8,
+      clientName: "Alumni Network | School | College",
+      clientAlias: "Alumni Management",
+      clientWebsite: "https://alumni.sysassist.co",
+      systemName: "Alumni Management & Engagement Platform",
+      description:
+        "We designed and developed a comprehensive Alumni Management & Engagement Platform for educational institutions to manage alumni records, strengthen community engagement, organize events, support career opportunities, enable mentorship, and facilitate donations and sponsorships through a centralized digital platform.",
 
+      keyCapabilities: [
+        "Centralized alumni registration, profile, and lifecycle management with batch, pass-out year, class, branch, and professional details",
+        "Searchable alumni directory with advanced filters by batch, city, profession, organization, branch, and other attributes",
+        "Admin verification, approval, activation, and profile management workflows",
+        "Alumni announcements, institutional news, achievements, and important updates",
+        "Event and reunion management with registrations, RSVP tracking, announcements, and updates",
+        "Job and career opportunity sharing for alumni and current students",
+        "Alumni achievements and success story management",
+        "Mentorship and networking between alumni and current students",
+        "Internal messaging and communication between alumni and management users",
+        "Donation and sponsorship management with online and offline payment or cheque records",
+        "Sponsor a Child functionality for educational needs such as tuition fees, books, uniforms, and other support",
+        "Role-based access for Admin, Alumni, Trustees, Management, and other authorized users",
+        "Dashboard and analytics for alumni registrations, batches, locations, professions, and engagement",
+        "Email and in-app notification support",
+        "Privacy controls allowing alumni to manage the visibility of their profile information",
+      ],
+
+      techStack: [
+        "React.js",
+        "Tailwind CSS",
+        "Node.js",
+        "Express.js",
+        "MySQL",
+        "AWS",
+        "REST APIs",
+      ],
+
+      outcome:
+        "A unified digital alumni ecosystem that enables educational institutions to maintain lifelong relationships with their graduates, improve communication and networking, organize events and mentorship programs, provide career opportunities, and facilitate meaningful alumni contributions and support for the institution and current students.",
+
+      image: "/alumni-management.jpg",
+      testimonialAuthor: "",
+      type: "web",
+      platforms: ["Web"],
+    }
   ];
 
   // Updated Testimonials with project-specific details
@@ -508,7 +591,7 @@ const Testimonials = () => {
                             )}
                             {study.clientWebsite && (
                               <a
-                                href={`https://${study.clientWebsite}`}
+                                href={getWebsiteHref(study.clientWebsite)}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 text-white rounded-lg font-medium hover:bg-white/30 transition-all duration-300"

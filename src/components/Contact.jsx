@@ -143,12 +143,12 @@ const Contact = () => {
                     </div>
                   </a>
                   <a
-                    href="https://www.twitter.com"
+                    href="https://www.instagram.com/sysassistit"
                     className="social-icon"
-                    aria-label="Twitter"
+                    aria-label="Instagram"
                   >
                     <div className="w-10 h-10 bg-blue-400 text-white rounded-full flex items-center justify-center">
-                      <span className="text-lg font-bold">X</span>
+                      <span className="text-lg font-bold">I</span>
                     </div>
                   </a>
                   <a
@@ -172,8 +172,8 @@ const Contact = () => {
               {formStatus.submitted ? (
                 <div
                   className={`form-message p-4 rounded-lg ${formStatus.error
-                      ? "bg-red-100 text-red-700"
-                      : "bg-green-100 text-green-700"
+                    ? "bg-red-100 text-red-700"
+                    : "bg-green-100 text-green-700"
                     }`}
                 >
                   {formStatus.message}

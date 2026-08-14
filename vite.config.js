@@ -8,9 +8,8 @@ export default defineConfig({
   // base: '/Sysassist-React-Website/',
   base: '/',
 
-  // server :{
-  //   host:"192.168.1.17",
-  //   port:5174
-  //  d
-  // }
+  server :{
+    host:"192.168.1.17",
+    port:5174
+  }
 });
